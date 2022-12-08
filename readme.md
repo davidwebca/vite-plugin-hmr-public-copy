@@ -24,10 +24,14 @@ yarn add -D vite-plugin-hmr-public-copy
 Add ```ViteHmrPublicCopy()``` to your Vite config
 
 ```js
-// ...
+export default {
   plugins: [
-    ViteHmrPublicCopy()
+    ViteHmrPublicCopy({
+      copy: true,
+      copyAtStart: true
+    })
   ]
+}
 ```
 
 ## Options
