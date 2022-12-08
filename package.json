@@ -1,0 +1,30 @@
+{
+  "name": "vite-plugin-hmr-public-copy",
+  "version": "0.0.1",
+  "description": "Vite public to keep publicDir files synced during HMR",
+  "main": "src/index.js",
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidwebca/vite-plugin-hmr-public-copy.git"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "hmr"
+  ],
+  "author": "davidwebca (https://github.com/davidwebca)",
+  "license": "MIT",
+  "homepage": "https://github.com/davidwebca/vite-plugin-hmr-public-copy",
+  "peerDependencies": {
+    "vite": "^3.0.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "micromatch": "^4.0.5",
+    "picocolors": "^1.0.0",
+    "fast-glob": "^3.2.12"
+  }
+}
