@@ -63,4 +63,6 @@ Tells the plugin to copy the files as soon as the HMR server starts. Pass false 
 
 
 ## Contributions
-This plugin has been quickly whipped together for my own needs, but if you want to help improve this, all pull requests are welcome. Typescript refactoring would be appreciated. Please do not raise issues as those will most likely be ignored.
+This plugin has been quickly whipped together for my own needs, but if you want to help improve this, all pull requests are welcome. Typescript refactoring would be appreciated.
+> **Warning** 
+> Please do not raise issues as those will most likely be ignored.
