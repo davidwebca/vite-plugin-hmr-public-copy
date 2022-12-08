@@ -1,7 +1,7 @@
 # Vite HMR Public Copy
 ## ⚡ Vite plugin to allow copying public files with HMR
 
-> **Info**
+> **Note**
 > Currently, Vite does serve the publicDir files, so most people shouldn't need this plugin.
 
 Vite has a configuration called [publicDir](https://vitejs.dev/guide/assets.html#the-public-directory) that allows simply copying all the files contained in that directory to the build.outDir. This is provided as a utility to allow simple files that don't need to be processed by vite to be replicated in the build directory. Unfortunately, Vite doesn't create those files in the outDir during HMR, it simply serves them (they are accessible by a URL in the browser).
