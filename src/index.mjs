@@ -6,19 +6,20 @@ import { resolve, relative } from 'path';
 
 const ViteHmrPublicCopy = (config = { copy: true, copyAtStart: true }) => {
     let viteConfig,
-        paths = [];
+        paths = [],
+        currentDir = resolve();
 
     const copyMatchedFiles = (files) => {
         if (files.length > 0) {
             for (let i = 0, il = files.length; i < il; ++i) {
                 // Be careful, publicDir seems to be resolved automatically but not build.outDir
-                let outDestination = files[i].replace(viteConfig.publicDir, resolve(__dirname, viteConfig.build.outDir));
+                let outDestination = files[i].replace(viteConfig.publicDir, resolve(currentDir, viteConfig.build.outDir));
                 viteConfig.logger.info(
                     colors.green('[ViteHmrPublicCopy] ') +
                         colors.dim('copying ') +
-                        colors.blue(relative(__dirname, files[i])) +
+                        colors.blue(relative(currentDir, files[i])) +
                         colors.dim(' to ') +
-                        colors.blue(relative(__dirname, outDestination))
+                        colors.blue(relative(currentDir, outDestination))
                 );
                 copy(files[i], outDestination).catch((err) => {
                     viteConfig.logger.error(colors.red(`The file "${files[i]}" could not be copied`));
@@ -45,7 +46,7 @@ const ViteHmrPublicCopy = (config = { copy: true, copyAtStart: true }) => {
         async buildStart() {
             if (config.copyAtStart) {
                 let allFiles = await fastglob(`${viteConfig.publicDir}/**/*`);
-                let matchedFiles = microMatch(allFiles, paths);
+                let matchedFiles = micromatch(allFiles, paths);
                 copyMatchedFiles(matchedFiles);
             }
         },
