@@ -1,11 +1,11 @@
 {
   "name": "vite-plugin-hmr-public-copy",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Vite public to keep publicDir files synced during HMR",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "scripts" : {
+  "scripts": {
     "build": "esbuild src/index.mjs --platform=node --bundle --format=esm --outfile=dist/index.mjs && esbuild src/index.mjs --platform=node --bundle --format=cjs --outfile=dist/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run build"
