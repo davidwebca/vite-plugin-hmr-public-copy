@@ -24,6 +24,8 @@ yarn add -D vite-plugin-hmr-public-copy
 Add ```ViteHmrPublicCopy()``` to your Vite config
 
 ```js
+import ViteHmrPublicCopy from 'vite-plugin-hmr-public-copy';
+
 export default {
   plugins: [
     ViteHmrPublicCopy({
@@ -65,4 +67,4 @@ Tells the plugin to copy the files as soon as the HMR server starts. Pass false 
 ## Contributions
 This plugin has been quickly whipped together for my own needs, but if you want to help improve this, all pull requests are welcome. Typescript refactoring would be appreciated.
 > **Warning** 
-> Please do not raise issues as those will most likely be ignored.
+> Please do not raise issues without tested pull request as those will most likely be ignored or only reviewed when I have time.
