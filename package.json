@@ -1,14 +1,20 @@
 {
   "name": "vite-plugin-hmr-public-copy",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "Vite public to keep publicDir files synced during HMR",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "scripts": {
-    "build": "esbuild src/index.mjs --platform=node --bundle --format=esm --outfile=dist/index.mjs && esbuild src/index.mjs --platform=node --bundle --format=cjs --outfile=dist/index.cjs",
+    "build": "esbuild src/index.mjs --format=esm --outfile=dist/index.mjs && esbuild src/index.mjs --format=cjs --outfile=dist/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run build"
+  },
+  "exports": {
+    ".": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+    }
   },
   "engines": {
     "node": "^18.20.2 || ^20.13.1"
@@ -28,13 +34,13 @@
   "peerDependencies": {
     "vite": "^3.0.0 || ^4.0.0 || ^5.0.0"
   },
-  "devDependencies": {
-    "esbuild": "^0.16.2"
-  },
   "dependencies": {
-    "fs-extra": "^11.1.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
     "micromatch": "^4.0.5",
-    "picocolors": "^1.0.0",
-    "fast-glob": "^3.2.12"
+    "picocolors": "^1.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.1"
   }
 }
